@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
     "lodash": "^4.17.10",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -16,5 +17,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "Ce repo est une copie du projet  React-Redux-Starter seulement celui ci a été installé avec la commande create-react-app",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinLebhar/React-Redux-Starter-Create-React-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobinLebhar/React-Redux-Starter-Create-React-App/issues"
+  },
+  "homepage": "https://github.com/RobinLebhar/React-Redux-Starter-Create-React-App#readme"
 }
