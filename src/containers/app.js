@@ -9,7 +9,7 @@ class App extends Component{
     constructor(props){
         super(props)
         this.state = {
-            currentMusique:{}
+            listeMusiques:[]
         }
     }
 
@@ -20,16 +20,23 @@ class App extends Component{
     initMusique(){
         axios.get(`${LINK_LOCALHOST}${MUSIQUES}`).then(function(response){
             this.setState({currentMusique:response.data[0]});
-
+            this.setState({listeMusiques:response.data});
+            console.log(this.state.listeMusiques);
         }.bind(this));
+        
     }
 
     render(){
         return (
+            <div>
+            <h1 className="mt-3 mb-3">Musiques</h1>
             <div className="row">
-                <div className="col-4">
-                    <Musique title={this.state.currentMusique.titre} date={this.state.currentMusique.date} MUSIQUE_LINK={this.state.currentMusique.link}/>  
-                </div>
+                {this.state.listeMusiques.map(currentMusique => (
+                    <div className="col-4">
+                    <Musique title={currentMusique.titre} date={currentMusique.date} MUSIQUE_LINK={currentMusique.link}/>  
+                    </div>
+                ))}
+            </div>
             </div>
         )
     }
