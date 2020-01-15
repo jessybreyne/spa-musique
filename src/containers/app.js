@@ -27,14 +27,46 @@ class App extends Component{
 
     render(){
         return (
-            <div>
+
                 <div className="row">
-                    <div className="col-md-8">
-                        <Musique MUSIQUE_LINK={this.state.currentMusique.link}/>
-                        <MusiqueDetail title={this.state.currentMusique.titre} date={this.state.currentMusique.date} />
+                    <div className="col-4">
+                        <div className="card">
+                            <Musique MUSIQUE_LINK={this.state.currentMusique.link}/>
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <MusiqueDetail title={this.state.currentMusique.titre} date={this.state.currentMusique.date} />
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" className="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <div className="col-4">
+                        <div className="card">
+                            <Musique MUSIQUE_LINK={this.state.currentMusique.link}/>
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <MusiqueDetail title={this.state.currentMusique.titre} date={this.state.currentMusique.date} />
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" className="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-4">
+                        <div className="card">
+                            <Musique MUSIQUE_LINK={this.state.currentMusique.link}/>
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <MusiqueDetail title={this.state.currentMusique.titre} date={this.state.currentMusique.date} />
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" className="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+    
         )
     }
 }
