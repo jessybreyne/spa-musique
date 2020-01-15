@@ -29,14 +29,14 @@ class App extends Component{
     render(){
         return (
             <div>
-            <h1 className="mt-3 mb-3">Musiques</h1>
-            <div className="row">
-                {this.state.listeMusiques.map(currentMusique => (
-                    <div className="col-4">
-                    <Musique title={currentMusique.titre} date={currentMusique.date} MUSIQUE_LINK={currentMusique.link}/>  
-                    </div>
-                ))}
-            </div>
+                <h1 className="mt-3 mb-3">Musiques</h1>
+                <div className="row">
+                    {this.state.listeMusiques.map(currentMusique => (
+                        <div className="col-4">
+                        <Musique title={currentMusique.titre} date={new Intl.DateTimeFormat('fr-FR', {month: 'long', day: '2-digit', year: 'numeric',}).format(new Date(currentMusique.date))} MUSIQUE_LINK={currentMusique.link}/>  
+                        </div>
+                    ))}
+                </div>
             </div>
         )
     }
