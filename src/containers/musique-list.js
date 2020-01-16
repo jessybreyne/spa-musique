@@ -25,9 +25,9 @@ class MusiqueList extends Component{
 
     render(){
         return(
-        <div className='border-bottom'>
+        <div className=''>
             <h1 className="mt-3 mb-3">Musiques</h1>
-            <div className="row mb-md-2 border-top">
+            <div className="row mb-md-2">
                     {this.state.listeMusiques.map(currentMusique => (
                     <div className="col-4 mt-md-2 ">
                         <Musique title={currentMusique.titre} date={new Intl.DateTimeFormat('fr-FR', {month: 'long', day: '2-digit', year: 'numeric',}).format(new Date(currentMusique.date))} MUSIQUE_LINK={currentMusique.link} categories={currentMusique.categories}/>  

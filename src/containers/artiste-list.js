@@ -25,9 +25,9 @@ class ArtisteList extends Component{
 
     render(){
         return(
-        <div className='border-bottom'>
+        <div>
             <h1 className="mt-3 mb-3">Artistes</h1>
-            <div className="row mb-md-2 border-top">
+            <div className="row mb-md-2">
                 {this.state.listeArtistes.map(currentArtiste => (
                     <div className="col-4 mt-md-2 ">
                         <Artiste nom={currentArtiste.nom} photo={currentArtiste.photo}/>  
