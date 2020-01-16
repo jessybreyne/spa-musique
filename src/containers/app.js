@@ -1,7 +1,6 @@
 import React,{Component} from 'react'
 import Musique from '../components/musique'
 import axios from 'axios'
-import MusiqueDetail from '../components/musique-detail'
 
 const LINK_LOCALHOST = "http://127.0.0.1:8000/"
 const MUSIQUES = "api/musiques.json"
@@ -10,7 +9,7 @@ class App extends Component{
     constructor(props){
         super(props)
         this.state = {
-            currentMusique:{}
+            listeMusiques:[]
         }
     }
 
@@ -21,18 +20,22 @@ class App extends Component{
     initMusique(){
         axios.get(`${LINK_LOCALHOST}${MUSIQUES}`).then(function(response){
             this.setState({currentMusique:response.data[0]});
-
+            this.setState({listeMusiques:response.data});
+            console.log(this.state.listeMusiques);
         }.bind(this));
+        
     }
 
     render(){
         return (
             <div>
+                <h1 className="mt-3 mb-3">Musiques</h1>
                 <div className="row">
-                    <div className="col-md-8">
-                        <Musique MUSIQUE_LINK={this.state.currentMusique.link}/>
-                        <MusiqueDetail title={this.state.currentMusique.titre} date={this.state.currentMusique.date} />
-                    </div>
+                    {this.state.listeMusiques.map(currentMusique => (
+                        <div className="col-4">
+                        <Musique title={currentMusique.titre} date={new Intl.DateTimeFormat('fr-FR', {month: 'long', day: '2-digit', year: 'numeric',}).format(new Date(currentMusique.date))} MUSIQUE_LINK={currentMusique.link}/>  
+                        </div>
+                    ))}
                 </div>
             </div>
         )
