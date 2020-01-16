@@ -25,11 +25,11 @@ class AlbumList extends Component{
 
     render(){
         return(
-        <div>
+        <div className='border-bottom'>
             <h1 className="mt-3 mb-3">Albums</h1>
-            <div className="row">
+            <div className="row mb-md-2 border-top">
                 {this.state.listeAlbums.map(currentAlbum => (
-                    <div className="col-4">
+                    <div className="col-4 mt-md-2 ">
                         <Album nom={currentAlbum.nom} image={currentAlbum.image}/>  
                     </div>
                 ))}
