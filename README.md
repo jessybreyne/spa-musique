@@ -1,5 +1,17 @@
-# React-Redux-Starter-Create-React-App
+# React client Musique
 
-Ce repo est une copie du projet  React-Redux-Starter seulement celui ci a été installé avec la commande create-react-app
+## Introduction
 
-De plus les versions de react et redux y sont plus récente.
+Travail universitaire, project PHP, réalisation d'un CRUD en symfony de gestion de musique avec une API. Et un client SPA, dans notre cas en React.
+
+## Installation
+
+Une fois le serveur Symfony exécuté :
+
+Installation des dépendances JS
+```
+npm i
+```
+```
+npm start
+```
